@@ -1,11 +1,13 @@
 package com.magoflix.admin.catalogo.domain.category;
 
+import com.magoflix.admin.catalogo.domain.AggregateRoot;
+
 import java.time.Instant;
 import java.util.UUID;
 
-public class Category {
+public class Category extends AggregateRoot<CategoryId> {
 
-    private String id;
+
     private String name;
     private String description;
     private boolean active;
@@ -14,7 +16,7 @@ public class Category {
     private Instant deletedAt;
 
     private  Category(
-            final String id,
+            final CategoryId anId,
             final String name,
             final String description,
             final boolean active,
@@ -22,7 +24,7 @@ public class Category {
             final Instant updatedAt,
             final Instant deletedAt
     ) {
-        this.id = id;
+        super(anId);
         this.name = name;
         this.description = description;
         this.active = active;
@@ -32,12 +34,12 @@ public class Category {
     }
 
     public static Category newCategory(final String aName, final String aDescription, final boolean aIsActive){
-        final var id = UUID.randomUUID().toString();
+        final var id = CategoryId.unique();
         final var now = Instant.now();
         return new Category(id, aName, aDescription, aIsActive, now, now, null);
     }
 
-    public String getId() {
+    public CategoryId getId() {
         return id;
     }
 
