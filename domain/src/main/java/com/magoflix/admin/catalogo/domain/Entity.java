@@ -1,8 +1,10 @@
 package com.magoflix.admin.catalogo.domain;
 
+import com.magoflix.admin.catalogo.domain.validation.ValidationHandler;
+
 import java.util.Objects;
 
-abstract public class Entity<ID extends Identifier> {
+public abstract  class Entity<ID extends Identifier> {
 
     protected final ID id;
 
@@ -27,4 +29,7 @@ abstract public class Entity<ID extends Identifier> {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
+    public abstract  void validate(ValidationHandler handler);
 }

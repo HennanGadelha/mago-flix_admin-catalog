@@ -1,6 +1,8 @@
 package com.magoflix.admin.catalogo.domain;
 
 import com.magoflix.admin.catalogo.domain.category.Category;
+import com.magoflix.admin.catalogo.domain.exception.DomainException;
+import com.magoflix.admin.catalogo.domain.validation.handler.ThroesValidationHandler;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -37,12 +39,10 @@ public class CategoryTest {
                 Category.newCategory(expectedName, expectedDescription, expectedIsActive);
 
         final var actualException =
-                Assertions.assertThrows(DomainException.class, () -> actualCategory.validate());
+                Assertions.assertThrows(DomainException.class, () -> actualCategory.validate(new ThroesValidationHandler()));
 
-        Assertions.assertEquals(messageError, actualException.getErrors().get(0));
+        Assertions.assertEquals(messageError, actualException.getErrors().get(0).message());
         Assertions.assertEquals(expectedErrorCount, actualException.getErrors().size());
-
-
 
     }
 

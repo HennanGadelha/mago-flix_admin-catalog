@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.magoflix.admin.catalogo.domain.CategoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-09T00:48:04" hostname="gadelha-PC" time="0.028">
+<testsuite name="com.magoflix.admin.catalogo.domain.CategoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-09T03:13:00" hostname="gadelha-PC" time="0.042">
   <properties/>
-  <testcase name="givenAValidParams_whenCallNewCategory_thenInstantiateACategory()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.028"/>
+  <testcase name="givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.042"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

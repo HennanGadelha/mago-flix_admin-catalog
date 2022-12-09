@@ -1,6 +1,9 @@
 package com.magoflix.admin.catalogo.domain.category;
 
 import com.magoflix.admin.catalogo.domain.AggregateRoot;
+import com.magoflix.admin.catalogo.domain.Entity;
+import com.magoflix.admin.catalogo.domain.validation.CategoryValidator;
+import com.magoflix.admin.catalogo.domain.validation.ValidationHandler;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -43,6 +46,8 @@ public class Category extends AggregateRoot<CategoryId> {
         return id;
     }
 
+
+
     public String getName() {
         return name;
     }
@@ -65,5 +70,12 @@ public class Category extends AggregateRoot<CategoryId> {
 
     public Instant getDeletedAt() {
         return deletedAt;
+    }
+
+    @Override
+    public void validate(final ValidationHandler handler) {
+
+        new CategoryValidator(this, handler).validate();
+
     }
 }
