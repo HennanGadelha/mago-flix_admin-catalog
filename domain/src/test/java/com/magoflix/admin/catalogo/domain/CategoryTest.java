@@ -25,4 +25,25 @@ public class CategoryTest {
         Assertions.assertNull(actualCategorty.getDeletedAt());
     }
 
+    @Test
+    public void givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError(){
+        final String expectedName = null;
+        final var messageError = "'name' should not be null";
+        final var expectedErrorCount = 1;
+        final var expectedDescription = "category series";
+        final var expectedIsActive = true;
+
+        final var actualCategory =
+                Category.newCategory(expectedName, expectedDescription, expectedIsActive);
+
+        final var actualException =
+                Assertions.assertThrows(DomainException.class, () -> actualCategory.validate());
+
+        Assertions.assertEquals(messageError, actualException.getErrors().get(0));
+        Assertions.assertEquals(expectedErrorCount, actualException.getErrors().size());
+
+
+
+    }
+
 }
