@@ -6,10 +6,10 @@ import com.magoflix.admin.catalogo.domain.validation.ValidationHandler;
 
 import java.util.List;
 
-public class ThroesValidationHandler implements ValidationHandler {
+public class ThrowsValidationHandler implements ValidationHandler {
     @Override
     public ValidationHandler append(Error error) {
-       throw  DomainException.with(List.of(error));
+       throw  DomainException.with(error);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class ThroesValidationHandler implements ValidationHandler {
         try {
             validationHandler.validate();
         }catch (final Exception ex){
-            throw DomainException.with(List.of(new Error(ex.getMessage())));
+            throw DomainException.with(new Error(ex.getMessage()));
         }
         return this;
     }
