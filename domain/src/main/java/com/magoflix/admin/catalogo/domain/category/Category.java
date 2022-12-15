@@ -39,7 +39,8 @@ public class Category extends AggregateRoot<CategoryId> {
     public static Category newCategory(final String aName, final String aDescription, final boolean aIsActive){
         final var id = CategoryId.unique();
         final var now = Instant.now();
-        return new Category(id, aName, aDescription, aIsActive, now, now, null);
+        final var deletedAt = aIsActive ? null : now;
+        return new Category(id, aName, aDescription, aIsActive, now, now, deletedAt);
     }
 
     public CategoryId getId() {

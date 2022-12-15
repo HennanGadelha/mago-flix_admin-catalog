@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.magoflix.admin.catalogo.domain.CategoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-14T01:53:28" hostname="gadelha-PC" time="0.064">
+<testsuite name="com.magoflix.admin.catalogo.domain.CategoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-12-15T01:29:46" hostname="gadelha-PC" time="0.043">
   <properties/>
-  <testcase name="givenAValidParams_whenCallNewCategory_thenInstantiateACategory()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.043"/>
-  <testcase name="givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.013"/>
+  <testcase name="givenAnInvalidEmptyName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.031"/>
+  <testcase name="givenAnInvalidNameLengthMoreThan255_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAValidFalseIsActive_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.003"/>
+  <testcase name="givenAnInvalidNameLengthLessThan3_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAValidParams_whenCallNewCategory_thenInstantiateACategory()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.002"/>
+  <testcase name="givenAValidEmptyDescription_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
