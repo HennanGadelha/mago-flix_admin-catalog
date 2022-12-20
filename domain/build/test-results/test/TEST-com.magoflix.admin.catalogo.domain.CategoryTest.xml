@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.magoflix.admin.catalogo.domain.CategoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-15T02:29:35" hostname="gadelha-PC" time="0.031">
+<testsuite name="com.magoflix.admin.catalogo.domain.CategoryTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-12-20T00:20:23" hostname="gadelha-PC" time="0.055">
   <properties/>
-  <testcase name="givenAValidateInactiveCategory_whenCallActivate_thenReturnCategoryActivated()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.031"/>
+  <testcase name="givenAValidCategory_whenCallUpdate_thenReturnCategoryUpdated()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.031"/>
+  <testcase name="givenAnInvalidEmptyName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.003"/>
+  <testcase name="givenAnInvalidNameLengthMoreThan255_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAValidFalseIsActive_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAnInvalidNameLengthLessThan3_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAValidateInactiveCategory_whenCallActivate_thenReturnCategoryActivated()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.002"/>
+  <testcase name="givenAValidCategory_whenCallUpdateWithInvalidParams_thenReturnCategoryUpdated()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.002"/>
+  <testcase name="givenAValidParams_whenCallNewCategory_thenInstantiateACategory()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAValidCategory_whenCallUpdateToInactive_thenReturnCategoryUpdated()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.002"/>
+  <testcase name="givenAnInvalidNullName_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAValidEmptyDescription_whenCallNewCategoryAndValidate_thenShouldReceiveError()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
+  <testcase name="givenAValidateActiveCategory_whenCallDeactivate_thenReturnCategoryInactivated()" classname="com.magoflix.admin.catalogo.domain.CategoryTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
