@@ -313,7 +313,7 @@ public class CategoryTest {
         Assertions.assertTrue(categoryUpdated.getUpdatedAt().isAfter(updatedAt));
         Assertions.assertEquals(createdAt, categoryUpdated.getCreatedAt());
         Assertions.assertNull(aCategory.getDeletedAt());
-        
+
     }
 
 
